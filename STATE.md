@@ -13,4 +13,3 @@ Last run: never (scheduled daily 09:00 UTC)
 
 ---
 Run log: see loop-run-log.md
-Kill switch: add `loop-pause-all` label to any issue or set in this file

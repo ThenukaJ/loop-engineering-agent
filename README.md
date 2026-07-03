@@ -59,7 +59,7 @@ Schedule (daily 09:00 UTC)
 
 ## Kill Switch
 
-Add the label `loop-pause-all` to any issue in this repo, or set `loop-pause-all` in STATE.md. The loop exits immediately on the next run.
+Add the label `loop-pause-all` to any issue in this repo, or add the exact line `loop-pause-all` on its own in STATE.md. The loop exits immediately on the next run.
 
 ## License
 
