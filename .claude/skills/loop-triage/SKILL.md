@@ -23,10 +23,14 @@ You are an expert engineering triage agent. Your job is to produce a clean, prio
 Produce a markdown report with these sections:
 
 ### 1. High-Priority Items (act on these)
-- Clear, one-line description
-- Why it matters (impact, risk, or customer pain)
-- Suggested next action for the loop (e.g. "draft minimal fix in isolated worktree")
-- Rough effort estimate
+For each item, include:
+- **ID**: `ci-<run-id>` or `issue-<number>` — unique, stable identifier
+- **Title**: Clear, one-line description
+- **Why**: Why it matters (impact, risk, or customer pain)
+- **Type**: `ci-failure` | `issue` | `dependency` | `other`
+- **Suggested Action**: Specific implementer instruction (e.g. "Fix failing test_auth in tests/auth.test.js — mock external API")
+- **Effort**: S / M / L
+- **Files Likely Touched**: [list of paths for implementer context]
 
 ### 2. Watch Items (monitor, do not act yet)
 - Same format but lower urgency
@@ -36,6 +40,10 @@ Produce a markdown report with these sections:
 
 ### 4. State Updates
 - Any facts the loop should remember for the next run (e.g. "PR #1234 now has 2 approvals")
+
+### 5. Implementer Queue (L2+)
+- List of High-Priority IDs ready for implementer spawning
+- Only include items where `Type` is actionable and `Effort` ≤ M
 
 ## Rules
 
